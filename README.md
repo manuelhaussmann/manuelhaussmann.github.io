@@ -1,1 +1,1 @@
-This is adapted from the source code of Jon Barron's public academic website: https://jonbarron.info/. 
+This is adapted from the source code of Jon Barron's academic website: https://jonbarron.info/. 
