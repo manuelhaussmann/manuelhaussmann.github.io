@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Manuel Haussmann</title>
     <meta name="author" content="Manuel Haussmann">
+    <meta name="description" content="Manuel Haussmann, postdoctoral researcher at the University of Southern Denmark working on Bayesian probabilistic machine learning and reinforcement learning.">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
@@ -18,7 +19,7 @@
                 <p>
                     I'm a postdoctoral researcher at the <a href="https://www.sdu.dk/en/om-sdu/institutter-centre/imada_matematik_og_datalogi">University of Southern Denmark</a> in Odense, where I work in the <a href="https://adinlab.github.io/">group</a> of <a href="https://melihkandemir.github.io/">Melih Kandemir</a>.
                     I did my PhD at Heidelberg University with <a href="https://sciai-lab.org/members/fred-hamprecht.html">Fred Hamprecht</a> and Melih, and spent two great years at Aalto University in Finland working with <a href="https://kaski-lab.com/">Samuel Kaski</a> and <a href="https://users.aalto.fi/~harrila/">Harri Lähdesmäki</a>.
-                    My research focus is on Bayesian probabilistic machine learning with applications ranging from physics over health data to reinforcement learning.
+                    My research focus is on Bayesian probabilistic machine learning with applications ranging from physics and health data to reinforcement learning.
                     I am an action editor for TMLR, a reviewer for most major machine learning conferences (AAAI, AISTATS, ICLR, ICML, NeurIPS), and a member of the <a href="https://icbinb.cc/">ICBINB</a> initiative.
                 </p>
 
@@ -45,42 +46,60 @@
                 <h3><a href="https://arxiv.org/abs/2610.17925">Stein Variational Distributional Reinforcement Learning: Score-Guided Particles for Multivariate Return Distributions</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Melih Kandemir</p>
                 <p class="venue"><em>Preprint on arXiv</em>, 2026</p>
-                <p class="description">Stein variational gradient descent on critic particles guided by a learned score field of the distributional Bellman target, for multivariate returns and rare-event accuracy.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Decisions that weigh several reward signals against each other require the joint distribution of the return vector. Categorical critics scale exponentially in the reward dimension, and quantiles have no canonical multivariate analogue. Multivariate distributional critics therefore represent each return distribution by M equal-weight particles trained with a discrepancy loss. Beyond their atoms, the particles provide no sampler and cannot resolve events rarer than 1/M. We propose Stein variational distributional RL (SVDRL). Its critic outputs Stein particles, which Stein variational gradient descent transports along a learned score field of the distributional Bellman target. We learn this field by bootstrapped denoising score matching across noise levels and tie it across the Bellman recursion by a consistency loss, which we prove is a non-expansive temporal-difference scheme in score space. The same field certifies the particles. Its reverse-diffusion sampler satisfies a supremal Wasserstein policy-evaluation bound that holds for bounded, possibly multimodal returns. The Stein particles inherit this bound up to a gap that we measure without ground truth, and the sampler answers tail-risk queries below the particle resolution at any sample size. Empirically, SVDRL is more accurate on rare events than particle critics with the same number of particles, and on par on MuJoCo continuous control.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2601.20985">Distributional Active Inference</a></h3>
                 <p class="authors">Abdullah Akgül, Gülçin Baykal, <strong>Manuel Haussmann</strong>, Mustafa Mert Çelikok, Melih Kandemir</p>
                 <p class="venue"><em>International Conference on Machine Learning (ICML)</em>, 2026</p>
-                <p class="description">Active Inference plus Distributional RL.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Optimal control of complex environments with robotic systems faces two complementary and intertwined challenges: efficient organization of sensory state information and far-sighted action planning. Because the reinforcement learning framework addresses only the latter, it tends to deliver sample-inefficient solutions. Active inference is the state-of-the-art process theory that explains how biological brains handle this dual problem. However, its applications to artificial intelligence have thus far been limited to extensions of existing model-based approaches. We present a formal abstraction of reinforcement learning algorithms that spans model-based, distributional, and model-free approaches. This abstraction seamlessly integrates active inference into the distributional reinforcement learning framework, making its performance advantages accessible without transition dynamics modeling.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2406.04088">Deterministic Uncertainty Propagation for Improved Model-Based Offline Reinforcement Learning</a></h3>
                 <p class="authors">Abdullah Akgül, <strong>Manuel Haussmann</strong>, Melih Kandemir</p>
                 <p class="venue"><em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2024</p>
-                <p class="description">We introduce a moment-matching based uncertainty penalty for the Bellman operator in an offline RL setting.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Current approaches to model-based offline reinforcement learning often incorporate uncertainty-based reward penalization to address the distributional shift problem. These approaches, commonly known as pessimistic value iteration, use Monte Carlo sampling to estimate the Bellman target to perform temporal difference-based policy evaluation. We find out that the randomness caused by this sampling step significantly delays convergence. We present a theoretical result demonstrating the strong dependency of suboptimality on the number of Monte Carlo samples taken per Bellman target calculation. Our main contribution is a deterministic approximation to the Bellman target that uses progressive moment matching, a method developed originally for deterministic variational inference. The resulting algorithm, which we call Moment Matching Offline Model-Based Policy Optimization (MOMBO), propagates the uncertainty of the next state through a nonlinear Q-network in a deterministic fashion by approximating the distributions of hidden layer activations by a normal distribution. We show that it is possible to provide tighter guarantees for the suboptimality of MOMBO than the existing Monte Carlo sampling approaches. We also observe MOMBO to converge faster than these approaches in a large set of benchmark tasks.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://proceedings.mlr.press/v238/haussmann24a.html">Estimating treatment effects from single-arm trials via latent-variable modeling</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Tran Minh Son Le, Viivi Halla-aho, Samu Kurki, Jussi Leinonen, Miika Koskinen, Samuel Kaski, Harri Lähdesmäki</p>
                 <p class="venue"><em>International Conference on Artificial Intelligence and Statistics (AISTATS)</em>, 2024</p>
-                <p class="description">We introduce a probabilistic model to combine different patient populations for trial effect estimation.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Randomized controlled trials (RCTs) are the accepted standard for treatment effect estimation but they can be infeasible due to ethical reasons and prohibitive costs. Single-arm trials, where all patients belong to the treatment group, can be a viable alternative but require access to an external control group. We propose an identifiable deep latent-variable model for this scenario that can also account for missing covariate observations by modeling their structured missingness patterns. Our method uses amortized variational inference to learn both group-specific and identifiable shared latent representations, which can subsequently be used for (i) patient matching if treatment outcomes are not available for the treatment group, or for (ii) direct treatment effect estimation assuming outcomes are available for both groups. We evaluate the model on a public benchmark as well as on a data set consisting of a published RCT study and real-world electronic health records. Compared to previous methods, our results show improved performance both for direct treatment effect estimation as well as for effect estimation via patient matching.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.scipost.org/SciPostPhys.8.1.006">Deep-learning jets with uncertainties and more</a></h3>
                 <p class="authors">Sven Bollweg, <strong>Manuel Haussmann</strong>, Gregor Kasieczka, Michel Luchmann, Tilman Plehn, Jennifer Thompson</p>
                 <p class="venue"><em>SciPost Physics</em>, 2020</p>
-                <p class="description">We discuss Bayesian deep-learning methods for jet classification in particle physics.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Bayesian neural networks allow us to keep track of uncertainties, for example in top tagging, by learning a tagger output together with an error band. We illustrate the main features of Bayesian versions of established deep-learning taggers. We show how they capture statistical uncertainties from finite training samples, systematics related to the jet energy scale, and stability issues through pile-up. Altogether, Bayesian networks offer many new handles to understand and control deep learning at the LHC without introducing a visible prior effect and without compromising the network performance.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.ijcai.org/proceedings/2019/0343.pdf">Deep Active Learning with Adaptive Acquisition</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Fred A. Hamprecht, Melih Kandemir</p>
                 <p class="venue"><em>International Joint Conference on Artificial Intelligence (IJCAI)</em>, 2019</p>
-                <p class="description">We introduce a way to adaptively learn the acquisition function for active learning with reinforcement feedback.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Model selection is treated as a standard performance boosting step in many machine learning applications. Once all other properties of a learning problem are fixed, the model is selected by grid search on a held-out validation set. This is strictly inapplicable to active learning. Within the standardized workflow, the acquisition function is chosen among available heuristics a priori, and its success is observed only after the labeling budget is already exhausted. More importantly, none of the earlier studies report a unique consistently successful acquisition heuristic to the extent to stand out as the unique best choice. We present a method to break this vicious circle by defining the acquisition function as a learning predictor and training it by reinforcement feedback collected from each labeling round. As active learning is a scarce data regime, we bootstrap from a well-known heuristic that filters the bulk of data points on which all heuristics would agree, and learn a policy to warp the top portion of this ranking in the most beneficial way for the character of a specific data distribution. Our system consists of a Bayesian neural net, the predictor, a bootstrap acquisition function, a probabilistic state definition, and another Bayesian policy network that can effectively incorporate this input distribution. We observe on three benchmark data sets that our method always manages to either invent a new superior acquisition function or to adapt itself to the a priori unknown best performing heuristic for each specific data set.</p>
+                </details>
             </article>
 
             <p class="more-link"><a href="publications.html">All publications &rarr;</a></p>

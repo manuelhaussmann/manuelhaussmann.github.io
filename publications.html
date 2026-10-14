@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Publications | Manuel Haussmann</title>
     <meta name="author" content="Manuel Haussmann">
+    <meta name="description" content="Full list of publications by Manuel Haussmann on Bayesian probabilistic machine learning and reinforcement learning.">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
@@ -23,195 +24,278 @@
                 <h3><a href="https://arxiv.org/abs/2610.17925">Stein Variational Distributional Reinforcement Learning: Score-Guided Particles for Multivariate Return Distributions</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Melih Kandemir</p>
                 <p class="venue"><em>Preprint on arXiv</em>, 2026</p>
-                <p class="description">Stein variational gradient descent on critic particles guided by a learned score field of the distributional Bellman target, for multivariate returns and rare-event accuracy.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Decisions that weigh several reward signals against each other require the joint distribution of the return vector. Categorical critics scale exponentially in the reward dimension, and quantiles have no canonical multivariate analogue. Multivariate distributional critics therefore represent each return distribution by M equal-weight particles trained with a discrepancy loss. Beyond their atoms, the particles provide no sampler and cannot resolve events rarer than 1/M. We propose Stein variational distributional RL (SVDRL). Its critic outputs Stein particles, which Stein variational gradient descent transports along a learned score field of the distributional Bellman target. We learn this field by bootstrapped denoising score matching across noise levels and tie it across the Bellman recursion by a consistency loss, which we prove is a non-expansive temporal-difference scheme in score space. The same field certifies the particles. Its reverse-diffusion sampler satisfies a supremal Wasserstein policy-evaluation bound that holds for bounded, possibly multimodal returns. The Stein particles inherit this bound up to a gap that we measure without ground truth, and the sampler answers tail-risk queries below the particle resolution at any sample size. Empirically, SVDRL is more accurate on rare events than particle critics with the same number of particles, and on par on MuJoCo continuous control.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2605.05791">Fitted Q-Iteration with Continuous Actions and Adaptive Data: Smoothed Coverage and Minimax Rates</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Mustafa Mert Çelikok, Melih Kandemir</p>
                 <p class="venue"><em>Preprint on arXiv</em>, 2026</p>
-                <p class="description">Localized rates and matching minimax lower bounds for fitted Q-iteration with continuous actions under adaptively collected data.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Fitted Q-iteration (FQI) is well understood when the data come from a fixed distribution and the action set is finite, whereas value-based continuous control collects its data adaptively and maximizes over continuous actions. Both features break the standard analysis: the regression data are dependent, and every density-ratio concentrability coefficient of a deterministic greedy policy is infinite when the exploration has no atoms. Conditioning on the history freezes the regression target, so each round of FQI is a regression with martingale noise, and we obtain localized rates that are fast for classes of polylogarithmic metric entropy. We transfer the regression error to the loss of the greedy policy by smoothing the measures on which this loss is evaluated, at a price that depends on the action dimension and the smoothness of the residuals in the action. Under deterministic dynamics the state is smoothed as well, and the state dimension enters the price. Minimax lower bounds with the same exponents in the sample size show that no learner avoids these prices, for restart data in the case of the state dimension. The coverage conditions do not involve the unknown greedy policies; they hold under exploration floors with restarts and, for action smoothing, bounded transition densities.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2601.20985">Distributional Active Inference</a></h3>
                 <p class="authors">Abdullah Akgül, Gülçin Baykal, <strong>Manuel Haussmann</strong>, Mustafa Mert Çelikok, Melih Kandemir</p>
                 <p class="venue"><em>International Conference on Machine Learning (ICML)</em>, 2026</p>
-                <p class="description">Active Inference plus Distributional RL.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Optimal control of complex environments with robotic systems faces two complementary and intertwined challenges: efficient organization of sensory state information and far-sighted action planning. Because the reinforcement learning framework addresses only the latter, it tends to deliver sample-inefficient solutions. Active inference is the state-of-the-art process theory that explains how biological brains handle this dual problem. However, its applications to artificial intelligence have thus far been limited to extensions of existing model-based approaches. We present a formal abstraction of reinforcement learning algorithms that spans model-based, distributional, and model-free approaches. This abstraction seamlessly integrates active inference into the distributional reinforcement learning framework, making its performance advantages accessible without transition dynamics modeling.</p>
+                </details>
             </article>     
             
             <article class="paper">
                 <h3><a href="https://openreview.net/forum?id=KTfTwxsVNE">Overcoming Non-stationary Dynamics with Evidential Proximal Policy Optimization</a></h3>
                 <p class="authors">Abdullah Akgül, Gülçin Baykal, <strong>Manuel Haussmann</strong>, Melih Kandemir</p>
                 <p class="venue"><em>Transactions on Machine Learning Research (TMLR)</em>, 2025</p>
-                <p class="description">Fixing plasticity issues in PPO via evidential learning.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Continuous control of non-stationary environments is a major challenge for deep reinforcement learning algorithms. The time-dependency of the state transition dynamics aggravates the notorious stability problems of model-free deep actor-critic architectures. We posit that two properties will play a key role in overcoming non-stationarity in transition dynamics: (i) preserving the plasticity of the critic network and (ii) directed exploration for rapid adaptation to changing dynamics. We show that performing on-policy reinforcement learning with an evidential critic provides both. The evidential design ensures a fast and accurate approximation of the uncertainty around the state value, which maintains the plasticity of the critic network by detecting the distributional shifts caused by changes in dynamics. The probabilistic critic also makes the actor training objective a random variable, enabling the use of directed exploration approaches as a by-product. We name the resulting algorithm Evidential Proximal Policy Optimization (EPPO) due to the integral role of evidential uncertainty quantification in both policy evaluation and policy improvement stages. Through experiments on non-stationary continuous control tasks, where the environment dynamics change at regular intervals, we demonstrate that our algorithm outperforms state-of-the-art on-policy reinforcement learning variants in both task-specific and overall return.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.scipost.org/SciPostPhysCore.8.4.073">Accurate Surrogate Amplitudes with Calibrated Uncertainties</a></h3>
                 <p class="authors">Henning Bahl, Nina Elmer, Luigi Favaro, <strong>Manuel Haussmann</strong>, Tilman Plehn, Ramon Winterhalder</p>
                 <p class="venue">SciPost Physics Core, 2025</p>
-                <p class="description">An evaluation of uncertainty calibration with BNNs and ensembles on LHC physics data.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Neural networks for LHC physics have to be accurate, reliable, and controlled. Using neural surrogates for the prediction of loop amplitudes as a use case, we first show how activation functions are systematically tested with Kolmogorov-Arnold Networks. Then, we train neural surrogates to simultaneously predict the target amplitude and an uncertainty for the prediction. We disentangle systematic uncertainties, learned by a well-defined likelihood loss, from statistical uncertainties, which require the introduction of Bayesian neural networks or repulsive ensembles. We test the coverage of the learned uncertainties using pull distributions to quantify the calibration of cutting-edge neural surrogates.</p>
+                </details>
             </article>
             
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2402.03055">Deep Exploration with PAC-Bayes</a></h3>
                 <p class="authors">Bahareh Tasdighi, <strong>Manuel Haussmann</strong>, Nicklas Werge, Yi-Shan Wu, Melih Kandemir</p>
                 <p class="venue"><em>European Conference on Artificial Intelligence (ECAI)</em>, 2025</p>
-                <p class="description">We propose a novel actor-critic algorithm for continuous control in sparse reward settings, using a critic ensemble and PAC-Bayesian bounds on Bellman operator error to enable deep exploration via posterior sampling.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Reinforcement learning (RL) for continuous control under delayed rewards is an under-explored problem despite its significance in real-world applications. Many complex skills are based on intermediate ones as prerequisites. For instance, a humanoid locomotor must learn how to stand before it can learn to walk. To cope with delayed reward, an agent must perform deep exploration. However, existing deep exploration methods are designed for small discrete action spaces, and their generalization to state-of-the-art continuous control remains unproven. We address the deep exploration problem for the first time from a PAC-Bayesian perspective in the context of actor-critic learning. To do this, we quantify the error of the Bellman operator through a PAC-Bayes bound, where a bootstrapped ensemble of critic networks represents the posterior distribution, and their targets serve as a data-informed function-space prior. We derive an objective function from this bound and use it to train the critic ensemble. Each critic trains an individual soft actor network, implemented as a shared trunk and critic-specific heads. The agent performs deep exploration by acting epsilon-softly on a randomly chosen actor head. Our proposed algorithm, named PAC-Bayesian Actor-Critic (PBAC), is the only algorithm to consistently discover delayed rewards on continuous control tasks with varying difficulty.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2507.03487">ObjectRL: An Object-Oriented Reinforcement Learning Codebase</a></h3>
                 <p class="authors">Gülçin Baykal, Abdullah Akgül, <strong>Manuel Haussmann</strong>, Bahareh Tasdighi, Nicklas Werge, Yi-Shan Wu, Melih Kandemir</p>
-                <p class="venue"><em>Preprint on arXiv</em>, 2025</p>
-                <p class="description">Our library for RL research (get it <a href="https://github.com/adinlab/objectrl">here</a>)</p>
+                <p class="venue"><em>Preprint on arXiv</em>, 2025 / <a href="https://github.com/adinlab/objectrl">code</a></p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>ObjectRL is an open-source Python codebase for deep reinforcement learning (RL), designed for research-oriented prototyping with minimal programming effort. Unlike existing codebases, ObjectRL is built on Object-Oriented Programming (OOP) principles, providing a clear structure that simplifies the implementation, modification, and evaluation of new algorithms. ObjectRL lowers the entry barrier for deep RL research by organizing best practices into explicit, clearly separated components, making them easier to understand and adapt. Each algorithmic component is a class with attributes that describe key RL concepts and methods that intuitively reflect their interactions. The class hierarchy closely follows common ontological relationships, enabling data encapsulation, inheritance, and polymorphism, which are core features of OOP. We demonstrate the efficiency of ObjectRL's design through representative use cases that highlight its flexibility and suitability for rapid prototyping. The documentation and source code are available at https://objectrl.readthedocs.io and https://github.com/adinlab/objectrl .</p>
+                </details>
             </article>
             
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2505.19682">Deep Actor-Critics with Tight Risk Certificates</a></h3>
                 <p class="authors">Bahareh Tasdighi, <strong>Manuel Haussmann</strong>, Yi-Shan Wu, Andres R. Masegosa, Melih Kandemir</p>
                 <p class="venue"><em>Preprint on arXiv</em>, 2025</p>
-                <p class="description">Recursive PAC-Bayesian bounds for actor-critic methods.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Deep actor-critic algorithms have reached a level where they influence everyday life. They are a driving force behind continual improvement of large language models through user feedback. However, their deployment in physical systems is not yet widely adopted, mainly because no validation scheme fully quantifies their risk of malfunction. We demonstrate that it is possible to develop tight risk certificates for deep actor-critic algorithms that predict generalization performance from validation-time observations. Our key insight centers on the effectiveness of minimal evaluation data. A small feasible set of evaluation roll-outs collected from a pretrained policy suffices to produce accurate risk certificates when combined with a simple adaptation of PAC-Bayes theory. Specifically, we adopt a recently introduced recursive PAC-Bayes approach, which splits validation data into portions and recursively builds PAC-Bayes bounds on the excess loss of each portion's predictor, using the predictor from the previous portion as a data-informed prior. Our empirical results across multiple locomotion tasks, actor-critic methods, and policy expertise levels demonstrate risk certificates tight enough to be considered for practical use.</p>
+                </details>
             </article>
             
             <article class="paper">
                 <h3><a href="https://openreview.net/forum?id=7A96yteeF9">Latent mixed-effect models for high-dimensional longitudinal data</a></h3>
                 <p class="authors">Priscilla Ong, <strong>Manuel Haussmann</strong>, Otto Lönnroth, Harri Lähdesmäki</p>
                 <p class="venue"><em>Transactions on Machine Learning Research (TMLR); published version</em>, 2025</p>
-                <p class="related"><a href="https://arxiv.org/abs/2409.11008">Latent mixed-effect models for high-dimensional longitudinal data</a></h3>
+                <p class="related"><a href="https://arxiv.org/abs/2409.11008">Latent mixed-effect models for high-dimensional longitudinal data</a></p>
                 <p class="venue"><em>Machine Learning for Health Symposium; extended version</em>, 2024</p>
                 <p class="related"><a href="https://openreview.net/forum?id=6huQApLcJK">Learning high-dimensional mixed models via amortized variational inference</a></p>
                 <p class="venue"><em>ICML Workshop on Structured Probabilistic Inference & Generative Modeling</em>, 2024</p>
-                <p class="description">A structured variational auto-encoder constrained with a mixed model for longitudinal data.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Modelling longitudinal data is an important yet challenging task. These datasets can be high-dimensional, contain non-linear effects and feature time-varying covariates. Gaussian process (GP) prior-based variational autoencoders (VAEs) have emerged as a promising approach due to their ability to model time-series data. However, they are costly to train and struggle to fully exploit the rich covariates characteristic of longitudinal data, making them difficult for practitioners to use effectively. In this work, we leverage linear mixed models (LMMs) and amortized variational inference to provide conditional priors for VAEs, and propose LMM-VAE, a scalable, interpretable and identifiable model. We highlight theoretical connections between it and GP-based techniques, providing a unified framework for this class of methods. Our proposal performs competitively compared to existing approaches across simulated and real-world datasets.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://openreview.net/forum?id=SIuD7CySb4">High-Dimensional Bayesian Optimisation with Gaussian Process Prior Variational Autoencoders</a></h3>
                 <p class="authors">Siddharth Ramchandran, <strong>Manuel Haussmann</strong>, Harri Lähdesmäki</p>
                 <p class="venue"><em>International Conference on Learning Representations (ICLR)</em>, 2025</p>
-                <p class="description">Improving Bayesian optimization by incorporating prior knowledge into the latent space.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Bayesian optimisation (BO) using a Gaussian process (GP)-based surrogate model is a powerful tool for solving black-box optimisation problems but does not scale well to high-dimensional data. Previous works have proposed to use variational autoencoders (VAEs) to project high-dimensional data onto a low-dimensional latent space and to implement BO in the inferred latent space. In this work, we propose a conditional generative model for efficient high-dimensional BO that uses a GP surrogate model together with GP prior VAEs. A GP prior VAE extends the standard VAE by conditioning the generative and inference model on auxiliary covariates, capturing complex correlations across samples with a GP. Our model incorporates the observed target quantity values as auxiliary covariates learning a structured latent space that is better suited for the GP-based BO surrogate model. It handles partially observed auxiliary covariates using a unifying probabilistic framework and can also incorporate additional auxiliary covariates that may be available in real-world applications. We demonstrate that our method improves upon existing latent space BO methods on simulated datasets as well as on commonly used benchmarks.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2406.04088">Deterministic Uncertainty Propagation for Improved Model-Based Offline Reinforcement Learning</a></h3>
                 <p class="authors">Abdullah Akgül, <strong>Manuel Haussmann</strong>, Melih Kandemir</p>
                 <p class="venue"><em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2024</p>
-                <p class="description">We introduce a moment-matching based uncertainty penalty for the Bellman operator in an offline RL setting.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Current approaches to model-based offline reinforcement learning often incorporate uncertainty-based reward penalization to address the distributional shift problem. These approaches, commonly known as pessimistic value iteration, use Monte Carlo sampling to estimate the Bellman target to perform temporal difference-based policy evaluation. We find out that the randomness caused by this sampling step significantly delays convergence. We present a theoretical result demonstrating the strong dependency of suboptimality on the number of Monte Carlo samples taken per Bellman target calculation. Our main contribution is a deterministic approximation to the Bellman target that uses progressive moment matching, a method developed originally for deterministic variational inference. The resulting algorithm, which we call Moment Matching Offline Model-Based Policy Optimization (MOMBO), propagates the uncertainty of the next state through a nonlinear Q-network in a deterministic fashion by approximating the distributions of hidden layer activations by a normal distribution. We show that it is possible to provide tighter guarantees for the suboptimality of MOMBO than the existing Monte Carlo sampling approaches. We also observe MOMBO to converge faster than these approaches in a large set of benchmark tasks.</p>
+                </details>
             </article>
 
             <article class="paper">
-                <h3><a href="https://openreview.net/forum?id=V2WVlKJ3GV">PAC-Bayesian Soft Actor-Critic Learning</a></h3>
+                <h3><a href="https://proceedings.mlr.press/v253/tasdighi24a.html">PAC-Bayesian Soft Actor-Critic Learning</a></h3>
                 <p class="authors">Bahareh Tasdighi, Abdullah Akgül, <strong>Manuel Haussmann</strong>, Kenny Kazimirzak Brink, Melih Kandemir</p>
                 <p class="venue"><em>Advances in Approximate Bayesian Inference (AABI)</em>, 2024</p>
-                <p class="description">We introduce the first PAC Bayesian bound trainable in a modern deep reinforcement learning pipeline to solve continuous control tasks.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Actor-critic algorithms address the dual goals of reinforcement learning (RL), policy evaluation and improvement via two separate function approximators. The practicality of this approach comes at the expense of training instability, caused mainly by the destructive effect of the approximation errors of the critic on the actor. We tackle this bottleneck by employing an existing Probably Approximately Correct (PAC) Bayesian bound for the first time as the critic training objective of the Soft Actor-Critic (SAC) algorithm. We further demonstrate that online learning performance improves significantly when a stochastic actor explores multiple futures by critic-guided random search. We observe our resulting algorithm to compare favorably against the state-of-the-art SAC implementation on multiple classical control and locomotion tasks in terms of both sample efficiency and regret.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/2402.05758">Latent variable model for high-dimensional point process with structured missingness</a></h3>
                 <p class="authors">Maksim Sinelnikov, <strong>Manuel Haussmann</strong>, Harri Lähdesmäki</p>
                 <p class="venue"><em>International Conference on Machine Learning (ICML)</em>, 2024</p>
-                <p class="description">A model for longitudinal data that can handle irregular observations and model missing not at random data.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Longitudinal data are important in numerous fields, such as healthcare, sociology and seismology, but real-world datasets present notable challenges for practitioners because they can be high-dimensional, contain structured missingness patterns, and measurement time points can be governed by an unknown stochastic process. While various solutions have been suggested, the majority of them have been designed to account for only one of these challenges. In this work, we propose a flexible and efficient latent-variable model that is capable of addressing all these limitations. Our approach utilizes Gaussian processes to capture temporal correlations between samples and their associated missingness masks as well as to model the underlying point process. We construct our model as a variational autoencoder together with deep neural network parameterised encoder and decoder models, and develop a scalable amortised variational inference approach for efficient model training. We demonstrate competitive performance using both simulated and real datasets.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://proceedings.mlr.press/v238/haussmann24a.html">Estimating treatment effects from single-arm trials via latent-variable modeling</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Tran Minh Son Le, Viivi Halla-aho, Samu Kurki, Jussi Leinonen, Miika Koskinen, Samuel Kaski, Harri Lähdesmäki</p>
                 <p class="venue"><em>International Conference on Artificial Intelligence and Statistics (AISTATS)</em>, 2024</p>
-                <p class="description">We introduce a probabilistic model to combine different patient populations for trial effect estimation.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Randomized controlled trials (RCTs) are the accepted standard for treatment effect estimation but they can be infeasible due to ethical reasons and prohibitive costs. Single-arm trials, where all patients belong to the treatment group, can be a viable alternative but require access to an external control group. We propose an identifiable deep latent-variable model for this scenario that can also account for missing covariate observations by modeling their structured missingness patterns. Our method uses amortized variational inference to learn both group-specific and identifiable shared latent representations, which can subsequently be used for (i) patient matching if treatment outcomes are not available for the treatment group, or for (ii) direct treatment effect estimation assuming outcomes are available for both groups. We evaluate the model on a public benchmark as well as on a data set consisting of a published RCT study and real-world electronic health records. Compared to previous methods, our results show improved performance both for direct treatment effect estimation as well as for effect estimation via patient matching.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.nature.com/articles/s41598-024-51938-3">A comparative study of clinical trial and real-world data in patients with diabetic kidney disease</a></h3>
                 <p class="authors">Samu Kurki*, Viivi Halla-Aho*, <strong>Manuel Haussmann</strong>, Harri Lähdesmäki, Jussi V Leinonen, Miika Koskinen</p>
                 <p class="venue"><em>Nature Scientific Reports</em>, 2024</p>
-                <p class="description">An evaluation on the differences between a curated medical trial data set and uncurated electronic health records data.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>A growing body of research is focusing on real-world data (RWD) to supplement or replace randomized controlled trials (RCTs). However, due to the disparities in data generation mechanisms, differences are likely and necessitate scrutiny to validate the merging of these datasets. We compared the characteristics of RCT data from 5734 diabetic kidney disease patients with corresponding RWD from electronic health records (EHRs) of 23,523 patients. Demographics, diagnoses, medications, laboratory measurements, and vital signs were analyzed using visualization, statistical comparison, and cluster analysis. RCT and RWD sets exhibited significant differences in prevalence, longitudinality, completeness, and sampling density. The cluster analysis revealed distinct patient subgroups within both RCT and RWD sets, as well as clusters containing patients from both sets. We stress the importance of validation to verify the feasibility of combining RCT and RWD, for instance, in building an external control arm. Our results highlight general differences between RCT and RWD sets, which should be considered during the planning stages of an RCT-RWD study. If they are, RWD has the potential to enrich RCT data by providing first-hand baseline data, filling in missing data or by subgrouping or matching individuals, which calls for advanced methods to mitigate the differences between datasets.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2023/hash/5d1a382162cb5ed326f1d3dbbfac4c82-Abstract-Conference.html">Practical Equivariances via Relational Conditional Neural Processes</a></h3>
                 <p class="authors">Daolang Huang, <strong>Manuel Haussmann</strong>, Ulpu Remes, ST John, Grégoire Clarté, Kevin Luck, Samuel Kaski, Luigi Acerbi</p>
                 <p class="venue"><em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2023</p>
-                <p class="description">We introduce a method to incorporate high-dimensional equivariances into (conditional) neural processes.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Conditional Neural Processes (CNPs) are a class of metalearning models popular for combining the runtime efficiency of amortized inference with reliable uncertainty quantification. Many relevant machine learning tasks, such as in spatio-temporal modeling, Bayesian Optimization and continuous control, inherently contain equivariances – for example to translation – which the model can exploit for maximal performance. However, prior attempts to include equivariances in CNPs do not scale effectively beyond two input dimensions. In this work, we propose Relational Conditional Neural Processes (RCNPs), an effective approach to incorporate equivariances into any neural process model. Our proposed method extends the applicability and impact of equivariant neural processes to higher dimensions. We empirically demonstrate the competitive performance of RCNPs on a large array of tasks naturally containing equivariances.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.scipost.org/10.21468/SciPostPhys.13.1.003">Understanding Event-Generation Networks via Uncertainties</a></h3>
                 <p class="authors">Marco Bellagente, <strong>Manuel Haussmann</strong>, Michel Luchmann, Tilman Plehn</p>
                 <p class="venue"><em>SciPost Physics</em>, 2022</p>
-                <p class="description">An evaluation of Bayesian normalizing flow for LHC events.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Following the growing success of generative neural networks in LHC simulations, the crucial question is how to control the networks and assign uncertainties to their event output. We show how Bayesian normalizing flows or invertible networks capture uncertainties from the training and turn them into an uncertainty on the event weight. Fundamentally, the interplay between density and uncertainty estimates indicates that these networks learn functions in analogy to parameter fits rather than binned event counts.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://openreview.net/forum?id=84NMXTHYe-">Evidential Turing Processes</a></h3>
                 <p class="authors">Melih Kandemir, Abdullah Akgül, <strong>Manuel Haussmann</strong>, Gözde Ünal</p>
                 <p class="venue"><em>International Conference on Learning Representations (ICLR)</em>, 2022</p>
-                <p class="description">Evidential deep learning combined with concepts from neural Turing machines and neural processes.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>A probabilistic classifier with reliable predictive uncertainties i) fits successfully to the target domain data, ii) provides calibrated class probabilities in difficult regions of the target domain (e.g. class overlap), and iii) accurately identifies queries coming out of the target domain and reject them. We introduce an original combination of Evidential Deep Learning, Neural Processes, and Neural Turing Machines capable of providing all three essential properties mentioned above for total uncertainty quantification. We observe our method on three image classification benchmarks to consistently improve the in-domain uncertainty quantification, out-of-domain detection, and robustness against input perturbations with one single model. Our unified solution delivers an implementation-friendly and computationally efficient recipe for safety clearance and provides intellectual economy to an investigation of algorithmic roots of epistemic awareness in deep neural nets.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://proceedings.mlr.press/v130/haussmann21a.html">Learning Partially Known Stochastic Dynamics with Empirical PAC Bayes</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>*, Sebastian Gerwinn*, Andreas Look, Barbara Rakitsch, Melih Kandemir</p>
                 <p class="venue"><em>International Conference on Artificial Intelligence and Statistics (AISTATS)</em>, 2021</p>
-                <p class="description">We introduce a probabilistic method to learn dynamical systems that allows for partial input incorporation.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Neural Stochastic Differential Equations model a dynamical environment with neural nets assigned to their drift and diffusion terms. The high expressive power of their nonlinearity comes at the expense of instability in the identification of the large set of free parameters. This paper presents a recipe to improve the prediction accuracy of such models in three steps: i) accounting for epistemic uncertainty by assuming probabilistic weights, ii) incorporation of partial knowledge on the state dynamics, and iii) training the resultant hybrid model by an objective derived from a PAC-Bayesian generalization bound. We observe in our experiments that this recipe effectively translates partial and noisy prior knowledge into an improved model fit.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://arxiv.org/abs/1906.00816">Bayesian Evidential Deep Learning with PAC Regularization</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Sebastian Gerwinn, Melih Kandemir</p>
                 <p class="venue"><em>Advances in Approximate Bayesian Inference (AABI)</em>, 2021</p>
-                <p class="description">We combine evidential deep learning and PAC-based regularization with moment-matching approaches from Bayesian deep learning.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>We propose a novel method for closed-form predictive distribution modeling with neural nets. In quantifying prediction uncertainty, we build on Evidential Deep Learning, which has been impactful as being both simple to implement and giving closed-form access to predictive uncertainty. We employ it to model aleatoric uncertainty and extend it to account also for epistemic uncertainty by converting it to a Bayesian Neural Net. While extending its uncertainty quantification capabilities, we maintain its analytically accessible predictive distribution model by performing progressive moment matching for the first time for approximate weight marginalization. The eventual model introduces a prohibitively large number of hyperparameters for stable training. We overcome this drawback by deriving a vacuous PAC bound that comprises the marginal likelihood of the predictor and a complexity penalty. We observe on regression, classification, and out-of-domain detection benchmarks that our method improves model fit and uncertainty quantification.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.scipost.org/SciPostPhys.8.1.006">Deep-learning jets with uncertainties and more</a></h3>
                 <p class="authors">Sven Bollweg, <strong>Manuel Haussmann</strong>, Gregor Kasieczka, Michel Luchmann, Tilman Plehn, Jennifer Thompson</p>
                 <p class="venue"><em>SciPost Physics</em>, 2020</p>
-                <p class="description">We discuss Bayesian deep-learning methods for jet classification in particle physics.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Bayesian neural networks allow us to keep track of uncertainties, for example in top tagging, by learning a tagger output together with an error band. We illustrate the main features of Bayesian versions of established deep-learning taggers. We show how they capture statistical uncertainties from finite training samples, systematics related to the jet energy scale, and stability issues through pile-up. Altogether, Bayesian networks offer many new handles to understand and control deep learning at the LHC without introducing a visible prior effect and without compromising the network performance.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://proceedings.mlr.press/v115/haussmann20a.html">Sampling-Free Variational Inference of Bayesian Neural Networks by Variance Backpropagation</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Fred A. Hamprecht, Melih Kandemir</p>
                 <p class="venue"><em>Uncertainty in Artificial Intelligence Conference (UAI)</em>, 2020</p>
-                <p class="description">A sampling-free approach to BNN learning via ReLU decomposition.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>We propose a new Bayesian Neural Net formulation that affords variational inference for which the evidence lower bound is analytically tractable subject to a tight approximation. We achieve this tractability by (i) decomposing ReLU nonlinearities into the product of an identity and a Heaviside step function, (ii) introducing a separate path that decomposes the neural net expectation from its variance. We demonstrate formally that introducing separate latent binary variables to the activations allows representing the neural network likelihood as a chain of linear operations. Performing variational inference on this construction enables a sampling-free computation of the evidence lower bound which is a more effective approximation than the widely applied Monte Carlo sampling and CLT related techniques. We evaluate the model on a range of regression and classification tasks against BNN inference alternatives, showing competitive or improved performance over the current state-of-the-art.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://www.ijcai.org/proceedings/2019/0343.pdf">Deep Active Learning with Adaptive Acquisition</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Fred A. Hamprecht, Melih Kandemir</p>
                 <p class="venue"><em>International Joint Conference on Artificial Intelligence (IJCAI)</em>, 2019</p>
-                <p class="description">We introduce a way to adaptively learn the acquisition function for active learning with reinforcement feedback.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Model selection is treated as a standard performance boosting step in many machine learning applications. Once all other properties of a learning problem are fixed, the model is selected by grid search on a held-out validation set. This is strictly inapplicable to active learning. Within the standardized workflow, the acquisition function is chosen among available heuristics a priori, and its success is observed only after the labeling budget is already exhausted. More importantly, none of the earlier studies report a unique consistently successful acquisition heuristic to the extent to stand out as the unique best choice. We present a method to break this vicious circle by defining the acquisition function as a learning predictor and training it by reinforcement feedback collected from each labeling round. As active learning is a scarce data regime, we bootstrap from a well-known heuristic that filters the bulk of data points on which all heuristics would agree, and learn a policy to warp the top portion of this ranking in the most beneficial way for the character of a specific data distribution. Our system consists of a Bayesian neural net, the predictor, a bootstrap acquisition function, a probabilistic state definition, and another Bayesian policy network that can effectively incorporate this input distribution. We observe on three benchmark data sets that our method always manages to either invent a new superior acquisition function or to adapt itself to the a priori unknown best performing heuristic for each specific data set.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://openreview.net/forum?id=SkloDjAqYm">LeMoNADe: Learned Motif and Neuronal Assembly Detection in calcium imaging videos</a></h3>
                 <p class="authors">Elke Kirschbaum, <strong>Manuel Haussmann</strong>, Steffen Wolf, Hannah Sonntag, Justus Schneider, Shehabeldin Elzoheiry, Oliver Kann, Daniel Durstewitz, Fred A Hamprecht</p>
                 <p class="venue"><em>International Conference on Learning Representations (ICLR)</em>, 2019</p>
-                <p class="description">We present LeMoNADe, an end-to-end learned motif detection method directly operating on calcium imaging videos.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Neuronal assemblies, loosely defined as subsets of neurons with reoccurring spatio-temporally coordinated activation patterns, or "motifs", are thought to be building blocks of neural representations and information processing. We here propose LeMoNADe, a new exploratory data analysis method that facilitates hunting for motifs in calcium imaging videos, the dominant microscopic functional imaging modality in neurophysiology. Our nonparametric method extracts motifs directly from videos, bypassing the difficult intermediate step of spike extraction. Our technique augments variational autoencoders with a discrete stochastic node, and we show in detail how a differentiable reparametrization and relaxation can be used. An evaluation on simulated data, with available ground truth, reveals excellent quantitative performance. In real video data acquired from brain slices, with no ground truth available, LeMoNADe uncovers nontrivial candidate motifs that can help generate hypotheses for more focused biological investigations.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Haussmann_Variational_Bayesian_Multiple_CVPR_2017_paper.html">Variational Bayesian Multiple Instance Learning with Gaussian Processes</a></h3>
                 <p class="authors"><strong>Manuel Haussmann</strong>, Fred A. Hamprecht, Melih Kandemir</p>
                 <p class="venue"><em>Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2017</p>
-                <p class="description">Instance level inference with closed-form updates in a Gaussian processed-based model for weakly supervised multiple instance learning and object detection.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Gaussian Processes (GPs) are effective Bayesian predictors. We here show for the first time that instance labels of a GP classifier can be inferred in the multiple instance learning (MIL) setting using variational Bayes. We achieve this via a new construction of the bag likelihood that assumes a large value if the instance predictions obey the MIL constraints and a small value otherwise. This construction lets us derive the update rules for the variational parameters analytically, assuring both scalable learning and fast convergence. We observe this model to improve the state of the art in instance label prediction from bag-level supervision in the 20 Newsgroups benchmark, as well as in Barrett's cancer tumor localization from histopathology tissue microarray images. Furthermore, we introduce a novel pipeline for weakly supervised object detection naturally complemented with our model, which improves the state of the art on the PASCAL VOC 2007 and 2012 data sets. Last but not least, the performance of our model can be further boosted up using mixed supervision: a combination of weak (bag) and strong (instance) labels.</p>
+                </details>
             </article>
 
             <article class="paper">
                 <h3><a href="https://bmva-archive.org.uk/bmvc/2016/papers/paper071/index.html">Variational Weakly Supervised Gaussian Processes</a></h3>
                 <p class="authors">Melih Kandemir, <strong>Manuel Haussmann</strong>, Ferran Diego, Kumar Rajamani, Jeroen Van Der Laak, Fred Hamprecht</p>
                 <p class="venue"><em>British Machine Vision Conference (BMVC)</em>, 2016</p>
-                <p class="description">We introduce a model for multiple instance learning with Gaussian processes for bag-level predictions with closed-form updates.</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>We introduce the first model to perform weakly supervised learning with Gaussian processes on up to millions of instances. The key ingredient to achieve this scalability is to replace the standard assumption of MIL that the bag-level prediction is the maximum of instance-level estimates with the accumulated evidence of instances within a bag. This enables us to devise a novel variational inference scheme that operates solely by closed-form updates. Keeping all its parameters but one fixed, our model updates the remaining parameter to the global optimum. This virtue leads to charmingly fast convergence, fitting perfectly to large-scale learning setups. Our model performs significantly better in two medical applications than adaptation of GPMIL to scalable inference and various scalable MIL algorithms. It also proves to be very competitive in object classification against state-of-the-art adaptations of deep learning to weakly supervised learning.</p>
+                </details>
             </article>
         </section>
 
         <section class="research-section">
             <h2>Thesis</h2>
             <article class="paper">
-                <h3><a href="https://archiv.ub.uni-heidelberg.de/volltextserver/30364/"> Bayesian Neural Networks for Probabilistic Machine Learning</a> </h3>
-                <p class="authors">Manuel Haussmann </p>
-            </article>            
+                <h3><a href="https://archiv.ub.uni-heidelberg.de/volltextserver/30364/">Bayesian Neural Networks for Probabilistic Machine Learning</a></h3>
+                <p class="authors"><strong>Manuel Haussmann</strong></p>
+                <p class="venue"><em>PhD thesis, Heidelberg University</em>, 2021</p>
+                <details class="abstract">
+                    <summary>abstract</summary>
+                    <p>Deep Learning-based models are becoming more and more relevant for an increasing number of applications. Bayesian neural networks can serve as a principled way to model the uncertainty in such approaches and to include prior knowledge. This work tackles how to improve the training of Bayesian neural nets (BNNs) and how to apply them in practice. We first develop a variational inference-based approach to learn them without requiring samples during training using the popular rectified linear unit activation function's piecewise linear structure. We then show how we can use a second approach based on a central limit theorem argument to get a good predictive uncertainty signal for an active learning task. We further build a reinforcement learning-based approach in such an active learning setup, learning a second BNN that requests labels to support the primary model optimally. As a third variant, we then introduce a new method for learning BNNs by optimizing the marginal likelihood via a model selection based approach, relying on the concept of type-II maximum likelihood, also known as empirical Bayes. Using PAC-Bayes theory to develop a regularization structure, we show how to combine it with a popular deterministic model for out-of-distribution detection, demonstrating improved results. Using this joint combination of empirical Bayes and PAC-Bayes, we finally study how to use it to learn dynamical systems specified via stochastic differential equations in a way that allows incorporating prior knowledge of the dynamics and model uncertainty.</p>
+                </details>
+            </article>
         </section>
 
         <footer>

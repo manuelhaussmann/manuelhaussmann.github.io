@@ -179,8 +179,37 @@ strong {
   margin: 0.5em 0;
 }
 
-.paper .description {
-  margin: 1em 0 0 0;
+/* Collapsible abstracts, hidden by default */
+.paper .abstract {
+  margin: 0.5em 0 0 0;
+}
+
+.paper .abstract summary {
+  display: inline-block;
+  color: #1772d0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.paper .abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.paper .abstract summary::after {
+  content: " \25B8";
+}
+
+.paper .abstract[open] summary::after {
+  content: " \25BE";
+}
+
+.paper .abstract summary:focus,
+.paper .abstract summary:hover {
+  color: #f09228;
+}
+
+.paper .abstract p {
+  margin: 0.5em 0 0 0;
   color: #333;
 }
 
@@ -190,40 +219,6 @@ footer {
   text-align: right;
   font-size: small;
 }
-
-/* Utility classes - keep existing */
-.one {
-  width: 160px;
-  height: 160px;
-  position: relative;
-}
-
-.two {
-  width: 160px;
-  height: 160px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.fade {
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-span.highlight {
-  background-color: #ffffd0;
-}
-
-/* Legacy support - remove papertitle class usage */
-.papertitle {
-  font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-}
-
 
 /* Navigation between index and publications page */
 .section-intro {
